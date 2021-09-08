@@ -53,7 +53,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-     # load data file into a dataframe
+     # load into a dataframe
     df = pd.read_csv(CITY_DATA[city])
     
     # convert the Start Time column to datetime
@@ -91,7 +91,7 @@ def time_stats(df):
     # display the most common month
     print("The most common month is ", df['month'].mode()[0], "\n")
 
-    # display the most common day of week
+    # display the most common day of the week
     print("The most common day of week  is ", df['day_of_week'].mode()[0], "\n")
 
     # display the most common start hour
@@ -108,13 +108,13 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # display most commonly used start station
+    # display the most commonly used start station
     print("The most commonly used start station is ", df['Start Station'].mode()[0], "\n")
 
-    # display most commonly used end station
+    # display the most commonly used end station
     print("The most commonly used end station is ", df['End Station'].mode()[0], "\n")
 
-    # display most frequent combination of start station and end station trip
+    # display the most frequent combination of start station and end station trip
     df['combination'] = df['Start Station'] + " " + df['End Station']
     print("The most frequent combination of start station and end station trip is: ", df['combination'].mode()[0])
 
